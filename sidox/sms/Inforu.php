@@ -28,7 +28,7 @@ class Inforu {
         $this->_password = htmlentities( $password );
         $this->_sender   = htmlentities( $sender );
         //create root element
-        $this->_inforu   = new SimpleXMLElement( '<InforuRoot/>' );
+        $this->_inforu   = new \SimpleXMLElement( '<InforuRoot/>' );
         $this->createMessage( $message, $phoneNumbers );
     }
 
@@ -53,7 +53,7 @@ class Inforu {
      * This method add user connection and sender information to XML
      * @param SimpleXMLElement $node The node of message XML
      */
-    private function createSetting( SimpleXMLElement &$node ) {
+    private function createSetting( &$node ) {
 
 
         //Create sender Setting:
@@ -111,7 +111,7 @@ class Inforu {
         $response = curl_exec( $ch );
         curl_close( $ch );
 
-        $this->_inforu = new SimpleXMLElement( '<InforuRoot/>' );
+        $this->_inforu = new \SimpleXMLElement( '<InforuRoot/>' );
 
         $response = "<Responses>{$response}</Responses>";
         return ($getXml) ? $response : $this->responseTable( $response );
@@ -123,7 +123,7 @@ class Inforu {
      * @return string The table of all response
      */
     private function &responseTable( &$xml ) {
-        $xml = new SimpleXMLElement( $xml );
+        $xml = new \SimpleXMLElement( $xml );
         $ret = '';
         $end = count( $xml->Result );
         for ( $i = 0; $i < $end; $i++ ) {

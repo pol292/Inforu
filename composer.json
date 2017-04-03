@@ -1,0 +1,16 @@
+{
+    "name": "sidox/inforu",
+    "description": "Inforu SMS Service",
+    "authors": [
+        {
+            "name": "Pol",
+            "email": "pol292@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Sidox\\SMS\\": "sidox/sms"
+        }
+    }
+}
