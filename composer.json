@@ -1,6 +1,7 @@
 {
     "name": "sidox/inforu",
     "description": "Inforu SMS Service",
+    "license": "MIT",
     "authors": [
         {
             "name": "Pol",
